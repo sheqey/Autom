@@ -1,0 +1,58 @@
+<%-include("./h2.ejs")%>
+
+    
+    <!-- /.container-fluid -->
+
+
+<div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Edit/delete devices</h1>
+                 
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTable</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Room</th>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < data2.length; i++) { %>
+      <tr>
+        <td><%= data2[i].name %></td>
+         <td><%= data2[i].roomid %></td>
+        <td><%= data2[i].id %></td>
+        
+        <td><%= data2[i].status %></td>
+        <td><%= data2[i].type %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Actions">
+            <a href="/medit?id=<%= data2[i]._id %>"><button class="btn btn-primary mx-1 pt-2">Update</button></a>
+            <a href="/sdelete2?id=<%= data2[i]._id %>"><button class="btn btn-danger mx-1 pt-2">Delete</button></a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+<%-include("./f2.ejs")%>

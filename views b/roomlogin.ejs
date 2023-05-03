@@ -1,0 +1,37 @@
+<%-include("./uheader.ejs")%>
+    
+    <!-- Main Content -->
+   <!-- Include SweetAlert CSS and JS files -->
+
+   <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4>room Login</h4>
+          </div>
+          <div class="card-body">
+            <form method="Post" action="/roomslogin" >
+              <div class="form-group">
+                <label for="email">name</label>
+                <input type="text" class="form-control" name="name" id="email" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <hr>
+            <div class="text-center">
+              <a href="/forgotpassword">Forgot Password?</a> | <a href="/roomcreate">Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+    <!-- Footer -->
+    <%-include("./ufooter.ejs")%>

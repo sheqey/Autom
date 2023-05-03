@@ -1,0 +1,75 @@
+
+
+
+
+
+
+<%-include("./dheader.ejs")%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+<div class="container">
+    <h2>Smart Optimize</h2>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Switch on all curtains if lights are off</h4>
+        <button type="button" class="btn btn-primary" id="curtainsOn">Turn On Curtains</button>
+      </div>
+      <div class="col-md-6">
+        <h4>Switch on all lights if curtains are off</h4>
+        <button type="button" class="btn btn-primary" id="lightsOn">Turn On Lights</button>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4>Turn off all devices if no one is in the room</h4>
+        <button type="button" class="btn btn-danger" id="turnOffDevices">Turn Off Devices</button>
+      </div>
+      <div class="col-md-6">
+        <h4>Optimize water usage</h4>
+        <button type="button" class="btn btn-success" id="optimizeWater">Optimize Water</button>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("curtainsOn").addEventListener("click", function() {
+    fetch("/curtains-on")
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error(error));
+  });
+
+  document.getElementById("lightsOn").addEventListener("click", function() {
+    fetch("/lights-on")
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error(error));
+  });
+
+  document.getElementById("turnOffDevices").addEventListener("click", function() {
+    fetch("/turn-off-devices")
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error(error));
+  });
+
+  document.getElementById("optimizeWater").addEventListener("click", function() {
+    fetch("/optimize-water")
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error(error));
+  });
+});
+
+
+  </script>
+
+
+    <%-include("./dfooter.ejs")%>
+
+

@@ -1,0 +1,184 @@
+<%-include("./h2.ejs")%>
+
+
+
+
+
+<!-- End of Topbar -->
+
+                <style>
+                    .card-img-top {
+                  height: 400px;
+                }
+                
+                  </style>
+
+
+                <section id="dashboard" class="py-5 bg-light">
+                    <div class="container">
+                      <h2 class="text-center ">welcome <%= data.name %> </h2>
+                      <h2 class="text-center ">Connected Devices </h2>
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <div class="card border-0 rounded-0 shadow-sm mt-5">
+                            <img src="images/l.jpeg" class="card-img-top rounded-0" alt="Lighting">
+                            <div class="card-body">
+                              <h3 class="card-title text-center mb-3">Lighting</h3>
+                              
+                              
+                              
+                              
+                              <ul
+                              
+                              
+                               class="list-group list-group-flush">
+                               
+                               
+                                                              
+                           
+<% for (var i = 0; i < light.length; i++) { %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= light[i].name %>
+    <% if (light[i].status === 'on') { %>
+      <span class="badge bg-success"><%= light[i].status %></span>
+    <% } else { %>
+      <span class="badge bg-danger"><%= light[i].status %></span>
+    <% } %>
+  </li>
+<% } %>
+                         
+                                
+                                
+                              </ul>
+                              
+                              
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                        
+                        
+                        
+                        
+                         class="col-lg-4">
+                          <div class="card border-0 rounded-0 shadow-sm mt-5">
+                            <img src="images/water.jpeg" class="card-img-top rounded-0" alt="Water">
+                            <div class="card-body">
+                              <h3 class="card-title text-center mb-3">Water</h3>
+                              <ul class="list-group list-group-flush">
+                            
+                            
+                            
+                 <% for (var i = 0; i < water.length; i++) { %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= water[i].name %>
+    <% if (water[i].status === 'on') { %>
+      <span class="badge bg-success"><%= water[i].status %></span>
+    <% } else { %>
+      <span class="badge bg-danger"><%= water[i].status %></span>
+    <% } %>
+  </li>
+<% } %>
+                         
+                          
+                            
+                            
+                            
+                            
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="col-lg-4">
+                          <div class="card border-0 rounded-0 shadow-sm mt-5">
+                            <img src="images/curtains.jpeg" class="card-img-top rounded-0" alt="Lighting">
+                            <div class="card-body">
+                              <h3 class="card-title text-center mb-3">Smart Curtains</h3>
+                              <ul class="list-group list-group-flush">
+                                
+                            <% for (var i = 0; i < curtain.length; i++) { %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= curtain[i].name %>
+    <% if (curtain[i].status === 'on') { %>
+      <span class="badge bg-success"><%= curtain[i].status %></span>
+    <% } else { %>
+      <span class="badge bg-danger"><%= curtain[i].status %></span>
+    <% } %>
+  </li>
+<% } %>
+                         
+                   
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                  
+                        
+                      <div class="col-lg-4">
+                          <div class="card border-0 rounded-0 shadow-sm mt-5">
+                            <img src="images/devices.jpeg" class="card-img-top rounded-0" alt="Lighting">
+                            <div class="card-body">
+                              <h3 class="card-title text-center mb-3">Devices</h3>
+                              <ul class="list-group list-group-flush">
+                                
+                       <% for (var i = 0; i < devices.length; i++) { %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= devices[i].name %>
+    <% if (devices[i].status === 'on') { %>
+      <span class="badge bg-success"><%= devices[i].status %></span>
+    <% } else { %>
+      <span class="badge bg-danger"><%= devices[i].status %></span>
+    <% } %>
+  </li>
+<% } %>
+                         
+                       
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div> 
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </div>
+                  </section>
+                  
+                   
+
+
+
+
+
+
+
+
+<%-include("./f2.ejs")%>
